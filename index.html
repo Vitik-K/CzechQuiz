@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+		<!-------------------- HEAD------------------------>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Kat Vitik">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/682d0a804b.js" crossorigin="anonymous"></script>
+        <title>Kat's Quiz</title>
+        <!-------------------- CSS------------------------>
+		<link rel="stylesheet" type="text/css" href="includes/css/styles.css">
+
+	</head>
+		<!-------------------- BODY------------------------>
+	<body>
+		<!-- nav bar -->
+		<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+			<div class="container-fluid">
+			  <a class="navbar-brand" href="#"><span>My Quiz</span><p id="navGreeting"></p></a> 
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			  </div>
+			</div>
+		</nav>
+<!-- Quiz card-->
+		<form id="myQuizForm">
+			<div class="card d-grid col-10 mx-auto mt-3">
+				<div class="card-header text-center">
+					<h1>Dynamic Quiz</h1>
+					<h4>Test your Knowledge</h4>
+					<div id = "timer">00:00</div>
+				</div>
+				<div id="logOn" class="card-body">
+					<h5 class="card-title text-center">Welcome to my quiz</h5>
+					<p>Enter your name and click "Start" to begin the quiz:</p>
+					<div class="input-group  col-8  mb-3">
+						<input id="userName" type="text" class="form-control" placeholder="Enter your name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+						<button id="startQuizButton" class="btn btn-dark btn-outline-info" type="button">Start</button>
+						</div>
+					</div>
+					<div id="nameError"></div>
+					
+				</div>
+				<div id="quizSection">
+					<div id="userMessage" class="mt-1 mb-1 ms-3 "></div>
+					<div id="userResults" class="mt-1 mb-1 ms-3"></div>
+					<ul class="list-group  mt-3 Slist-group-flush text-start">
+						<li class="list-group-item">
+							<p>1. What is Czech's national sport?</p>
+								<input type="radio" id="football" name="q1" value="Football" >
+								<label for="html">a. Football (aka soccer)</label><br>
+								<input type="radio" id="baseball" name="q1" value="Baseball">
+								<label for="javascript">b. Baseball</label><br>
+								<input type="radio" id="hockey" name="q1" value="Hockey">
+								<label for="css">c. Hockey</label><br>
+								<input type="radio" id="tennis" name="q1" value="Tennis">
+								<label for="javascript">d. Tennis</label><br>
+								<input type="radio" id="basketball" name="q1" value="Basketball">
+								<label for="javascript">e. Basketball</label><br>
+								<div id="q1HintDiv" class="mt-2 hintDiv">
+									<span id="q1Hint">Hover here to see hint</span>
+									<span id="q1Answer" class="hideHint">  Answer: c. Hockey</span>
+								</div>
+						</li>
+						<li class="list-group-item">
+							<p>2. Czech Republic consumes the greatest amount of ____________ per capita.</p>
+								<input type="radio" id="beer" name="q2" value="Beer">
+								<label for="html">a. Beer</label><br>
+								<input type="radio" id="soup" name="q2" value="Soup">
+								<label for="javascript">b. Soup</label><br>
+								<input type="radio" id="apples" name="q2" value="Apples">
+								<label for="css">c. Apples</label><br>
+								<input type="radio" id="vodka" name="q2" value="Vodka">
+								<label for="javascript">d. Vodka</label><br>
+								<input type="radio" id="pretzels" name="q2" value="Pretzels">
+								<label for="javascript">e. Pretzels</label><br>
+								<div id="q2HintDiv" class="mt-2 hintDiv">
+									<span id="q2Hint">Hover here to see hint</span>
+									<span id="q2Answer" class="hideHint">  Answer: a. Beer</span>
+								</div>
+						</li>
+						<li class="list-group-item">
+							<p>3. What is the capital city of CZ?</p>
+								<input type="radio" id="brno" name="q3" value="Brno">
+								<label for="html">a. Brno</label><br>
+								<input type="radio" id="bratislava" name="q3" value="Bratislava">
+								<label for="javascript">b. Bratislava</label><br>
+								<input type="radio" id="pilsen" name="q3" value="Pilsen">
+								<label for="css">c. Pilsen</label><br>
+								<input type="radio" id="ostrava" name="q3" value="Ostrava">
+								<label for="javascript">d. Ostrava</label><br>
+								<input type="radio" id="prague" name="q3" value="Prague">
+								<label for="javascript">e. Prague</label><br>
+								<div id="q3HintDiv" class="mt-2 hintDiv">
+									<span id="q3Hint">Hover here to see hint</span>
+									<span id="q3Answer" class="hideHint">  Answer: e. Prague</span>
+								</div>
+
+						</li>
+						<li class="list-group-item">
+							<p>4. Czech is a land-lock country. How many other countries does it share a border with?</p>
+							<input type="radio" id="three" name="q4" value="3">
+							<label for="javascript">a. 3</label><br>
+							<input type="radio" id="four" name="q4" value="4">
+							<label for="html">b. 4</label><br>
+							<input type="radio" id="five" name="q4" value="5">
+							<label for="javascript">c. 5</label><br>
+							<input type="radio" id="seven" name="q4" value="7">
+							<label for="css">d. 7</label><br>
+							<input type="radio" id="eleven" name="q4" value="11">
+							<label for="javascript">e. 11</label><br>
+							<div id="q4HintDiv" class="mt-2 hintDiv">
+								<span id="q4Hint">Hover here to see hint</span>
+								<span id="q4Answer" class="hideHint">  Answer: b. 4 - Austria, Germany, Poland and Solvakia.</span>
+							</div>
+						</li>
+						<li class="list-group-item">
+							<p>5. Which famous historical figure was born in what is now current day Czech Republic?</p>
+							<input type="checkbox" id="mc" name="q5" value="Bike">
+							<label for="vehicle1">a. Marie Curie (1867-1934), Scientist</label><br>
+							<input type="checkbox" id="fk" name="q5" value="Car">
+							<label for="vehicle2">b. Franz Kafka (1883-1924), Author </label><br>
+							<input type="checkbox" id="ma" name="q5" value="Boat">
+							<label for="vehicle3">c. Marie Antoinette (1774-1792), Monarch</label><br>
+							<input type="checkbox" id="am" name="q5" value="Boat">
+							<label for="vehicle3">d. Alfons Mucha (1860-1939), Painter</label><br>
+							<input type="checkbox" id="ad" name="q5" value="Boat">
+							<label for="vehicle3">e. Antonin Dvorak (1841-1904), Classical Composer</label><br>
+							<div id="q5HintDiv" class="mt-2 hintDiv">
+								<span id="q5Hint">Hover here to see hint</span>
+								<span id="q5Answer" class="hideHint">  Answer:  b. Franz Kafka, d. Alfons Mucha, & e. Antonin Dvorak</span>
+							</div>
+						</li>
+					</ul>
+					<div class="d-grid col-6 mx-auto mt-3">
+						<button id ="submitQuizButton" class="btn btn-dark btn-outline-info" type="button">Submit</button>
+					</div>
+					<div id = "errorMessages" class=" d-grid col-11 mx-auto mt-3 mb-3">
+						<span id="errorMessagesSpan"></span>
+					</div>
+				</div>
+
+			</div>
+		</form>
+<!-- Quiz results dispaly modal-->
+
+		<div id="quizResultsModal" class="modal" tabindex="-1" aria-labelledby="quizResultsModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Quiz Results</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div id="flashResults" class="modal-body">
+					<div id="results"></div>
+					<div id="perfect"></div>
+					<div id="displayTotalTimeDiv">You finished the quiz in <span id="displayTotalTime"></span>!</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-dark btn-outline-info btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		
+
+		<!-- footer-->
+	<footer class="pt-3 py-3 ct-nav-primary bg-dark" >
+		<div style="color:white ;" class ="text-center">
+			<p class = "ms-1 my-0" style="color:white ;">COPYWRITE 2022</p>
+		</div>
+	</footer>
+    <!-------------------- JAVASCRIPT------------------------>
+	<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+	<script src="includes/js/script.js" defer></script>
+		
+	</body>
+	
+</html>
+
+	

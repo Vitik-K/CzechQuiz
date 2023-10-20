@@ -1,0 +1,42 @@
+:root {
+    --green: #ACDAD5;
+}
+
+.card,.list-group-item{
+    background-color: var(--green);
+}
+
+#userMessage{
+    font-weight: bold;
+    font-size: large;
+}
+
+#userResults{
+    font-weight: bold;
+    font-size: large;
+    color: blueviolet;
+}
+
+/* error message at bottom of quiz form: */
+#errorMessages{
+    color: red;
+}
+.hintDiv{
+    width:fit-content;
+}
+/* hide hint initially*/
+.hideHint{
+    display: none;
+}
+
+/* results display modal styling*/
+#results{
+    font-size: large;
+}
+#perfect{
+    font-size: large;
+    color: purple;
+}
+#displayTotalTimeDiv{
+    font-size: large;
+}
